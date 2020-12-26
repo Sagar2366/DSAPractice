@@ -1,0 +1,36 @@
+Problem Statement : Reverse the array
+
+Solution:
+1. Without creating method:
+arr = [int(i) for i in input().split()]
+print(arr)
+i = 0
+j = len(arr)-1
+while i <j:
+    arr[i], arr[j] = arr[j], arr[i]
+    i = i + 1
+    j = j - 1
+print(arr)
+
+2. Iterative Approach :
+arr = [int(i) for i in input().split()]
+def revarr(arr):
+  i = 0
+  j = len(arr)-1
+  while i <j:
+    arr[i], arr[j] = arr[j], arr[i]
+    i = i + 1
+    j = j - 1
+  return arr
+print(revarr(arr))
+
+3. Recursive Approach:
+arr = [int(i) for i in input().split()]
+def revarr(arr, i, j):
+  if i < j:
+    arr[i], arr[j] = arr[j], arr[i]
+    revarr(arr, i+1, j-1)
+  return arr
+start = 0
+end = len(arr)-1
+print(revarr(arr, start, end))
