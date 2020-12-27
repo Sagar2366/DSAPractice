@@ -1,0 +1,6 @@
+l1 = [int(x) for x in input().split()]
+
+def getkthsmallest(l1, i):
+    l1.sort()
+    return l1[i - 1]
+print(getkthsmallest(l1, 4))
