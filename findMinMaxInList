@@ -1,0 +1,20 @@
+l1 = [int(x) for x in input().split()]
+def minMax(l1):
+    min = -1
+    max = -1
+    if len(l1) == 1:
+        min, max = l1[0]
+        return min, max
+    if l1[0] < l1[1]:
+        min = l1[0]
+        max = l1[1]
+    else:
+        min = l1[1]
+        max = l1[0]
+    for i in range(2, len(l1)):
+        if l1[i] < min:
+            min = l1[i]
+        elif l1[i] > max:
+            max = l1[i]
+    return min, max
+print(minMax(l1))
