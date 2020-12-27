@@ -18,3 +18,18 @@ def minMax(l1):
             max = l1[i]
     return min, max
 print(minMax(l1))
+
+
+Second Approach:
+import sys
+l1 = [int(x) for x in input().split()]
+
+min = sys.maxsize
+max = -sys.maxsize-1
+
+for i in range(len(l1)):
+    if l1[i]< min:
+        min = l1[i]
+    if l1[i]>max:
+        max = l1[i]
+print(min, max)
