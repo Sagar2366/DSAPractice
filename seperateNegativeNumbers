@@ -1,0 +1,11 @@
+l1 = [int(x) for x in input().split()]
+
+
+def separateNegativity(l1):
+    j = 0
+    for i in range(len(l1)-1):
+        if l1[i] < 0:
+            l1[j], l1[i] = l1[i], l1[j]
+            j+=1
+    return l1
+print(separateNegativity(l1))
