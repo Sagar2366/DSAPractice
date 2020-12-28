@@ -18,3 +18,26 @@ def unionList(l1, l2):
         count-=1
     return l3
 print(unionList(l1, l2))
+
+Solution2:
+l1 = [int(x) for x in input().split()]
+l2 = [int(x) for x in input().split()]
+
+def unionList(l1, l2):
+    l3 = []
+    if len(l1) < len(l2):
+        for i in range(len(l2)):
+            if l2[i] not in l3:
+                l3.append(l2[i])
+        for i in range(len(l1)):
+            if l1[i] not in l3:
+                l3.append(l1[i])
+    else:
+        for i in range(len(l1)):
+            if l1[i] not in l3:
+                l3.append(l1[i])
+        for i in range(len(l2)):
+            if l2[i] not in l3:
+                l3.append(l2[i])
+    return l3
+print(unionList(l1, l2))
