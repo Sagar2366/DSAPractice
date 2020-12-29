@@ -1,0 +1,9 @@
+l1 = [int(x) for x in input().split()]
+
+def rotateArrayByOne(l1):
+    lastElement = l1[len(l1)-1]
+    for i in range( len(l1)-1, 0, -1):
+       l1[i] = l1[i-1]
+    l1[0] = lastElement
+    return l1
+print(rotateArrayByOne(l1))
