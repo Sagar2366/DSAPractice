@@ -1,0 +1,26 @@
+# cook your dish here
+
+l1 = [int(x) for x in input().split()]
+l2 = [int(x) for x in input().split()]
+
+def intersectionOfSortedList(l1, l2):
+    l3 = []
+    i = 0
+    j = 0
+    l = len(l1)
+    m = len(l2)
+    
+    while i < l and j < m:
+        if l1[i] < l2[j]:
+            i+=1
+        elif l2[j] < l1[i]:
+            j+=1
+        elif l1[i] == l2[j] and l1[i] not in l3:
+            l3.append(l1[i])
+            i+=1
+            j+=1
+        else:
+            i+=1
+            j+=1
+    return l3
+print(intersectionOfSortedList(l1, l2))
