@@ -1,0 +1,11 @@
+def tripletSum(l1, sum):
+    output = []
+    for i in range(0, len(l1)-1):
+        s = set()
+        firstNum = sum - l1[i]
+        for j in range(i + 1, len(l1)):
+            if(firstNum - l1[j]) in s: 
+                output.append([l1[i], l1[j], firstNum - l1[j]])
+            s.add(l1[j])
+    return output
+print(tripletSum(l1, sum))
