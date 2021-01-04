@@ -13,3 +13,26 @@ def duplicateInArray(l1):
     return visited
 
 print(duplicateInArray(l1))
+
+
+Solution 2:
+# cook your dish here
+l1 = [int(x) for x in input().split()]
+
+def duplicateInArray(l1):
+    visited = []
+    dict = {}
+    for ele in l1:
+        try:
+            dict[ele] +=1
+        except:
+            dict[ele]=1
+    print(dict)
+    for item in dict:
+        if dict[item] > 1:
+            new_pair = {}
+            new_pair[item] = dict[item]
+            visited.append(new_pair)
+    return visited
+
+print(duplicateInArray(l1))
